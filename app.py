@@ -1,23 +1,34 @@
+
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
 # Dummy data for cyber world information
+
 cyber_world_info = {
     "search1": "Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.",
     "search2": "Phishing is a type of cyber attack where attackers trick individuals into providing sensitive information.",
 }
 
 # Dummy data for cyber crime stories
+
 cyber_crime_stories = [
-    {"title": "Ransomware Attack on XYZ Company", "content": "Details about the ransomware attack..."},
-    {"title": "Social Engineering Scam", "content": "Description of a social engineering scam..."},
+    {
+        "title": "Ransomware Attack on XYZ Company",
+        "content": "Details about the ransomware attack..."
+    },
+    {
+        "title": "Social Engineering Scam",
+        "content": "Description of a social engineering scam..."
+    },
 ]
 
 # Dummy data for user complaints
+
 user_complaints = []
 
 # Dummy data for user queries
+
 user_queries = []
 
 
