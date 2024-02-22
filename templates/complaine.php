@@ -84,9 +84,7 @@
     
             $result = mysqli_query($connection,$query);
         }
-
-       
-
+        
     ?>
       
       <!-- footer section -->

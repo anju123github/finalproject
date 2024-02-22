@@ -41,7 +41,7 @@
             <!-- number field -->
             <div class="col-lg-4 col-12 py-3 form-group">
 
-                <input type="tel" name="number" id="" placeholder="Number" class="form-control">
+                <input type="text" name="number" id="" placeholder="Number" class="form-control">
 
             </div>
             <!-- content field -->
@@ -70,6 +70,7 @@
             $email = $_REQUEST['email'];
             $number = $_REQUEST['number'];
             $content = $_REQUEST['content'];
+
             
             require('connection.php');
             
@@ -82,11 +83,19 @@
                 take arguments :-
                     1 :  connection     {x}
                     2 :  query          {x}
-            */
             
-            $query = "insert into querytable values(${username},${email},${number},${content})";
+            insert into querytable values("username","fake@email.com","1234567890","hello how are you");
+            
+            */
+             
+            $query = "insert into querytable values('".$username."','".$email."','".$number."','".$content."')";
     
             $result = mysqli_query($connection,$query);
+
+            if ($result)
+            {
+                echo "<div  class='alert alert-success'> Success fully </div>";
+            }
         }
 
        
