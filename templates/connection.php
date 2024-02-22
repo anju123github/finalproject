@@ -14,7 +14,7 @@
             2 : username {x}
             3 : password
             4 : database
-    */ 
+    */  
     
     if ($connection)
     {

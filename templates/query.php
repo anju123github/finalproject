@@ -74,13 +74,17 @@
             require('connection.php');
             
             /*
+                create table querytable( username varchar(30), email varchar(30), number varchar(30), content varchar(30) );
+
+                ensure before test database or querytable present
+
                 mysqli_query(); : function return response of mysqli 
                 take arguments :-
                     1 :  connection     {x}
                     2 :  query          {x}
             */
             
-            $query = "insert into query values(${username},${email},${number},${content})";
+            $query = "insert into querytable values(${username},${email},${number},${content})";
     
             $result = mysqli_query($connection,$query);
         }
