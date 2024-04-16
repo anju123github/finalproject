@@ -1,3 +1,49 @@
+
+
+<?php
+session_start();
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "query";
+
+$connection = mysqli_connect($host,$username,$password,$database);
+if ($connection)
+{
+    echo ("<script> console.log(`Connection Established :)`) </script>");
+}
+else
+{
+    die (mysqli_connect_errno()." connection error : ".mysqli_connect_error());
+}
+
+
+if(isset($_POST['submit'])){
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+$number=$_POST['number'];
+$query=$_POST['query'];
+    $result="insert into user_query values('$username','$email','$number','$query');";
+if(mysqli_query($connection,$result)){
+    
+   
+ header("location:query.php");
+}
+else{
+    echo"error in send the complaint";
+}
+}
+
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,113 +52,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Platform</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-
-<body>
-
+<body style="background-image: linear-gradient(
+  45deg,
+  hsl(240deg 37% 62%) 0%,
+  hsl(274deg 42% 63%) 11%,
+  hsl(308deg 49% 64%) 22%,
+  hsl(330deg 90% 72%) 33%,
+  hsl(341deg 100% 73%) 44%,
+  hsl(358deg 100% 75%) 56%,
+  hsl(18deg 100% 70%) 67%,
+  hsl(34deg 100% 64%) 78%,
+  hsl(46deg 100% 57%) 89%,
+  hsl(55deg 100% 50%) 100%
+);">
   <?php include('navbar.php') ?>
 
     
     
-    <div class="container">
-    
-       <!-- form container -->
-       <form action="#" class="border rounded p-md-3 p-2 mt-lg-5 mt-md-3 mt-1">
-            
-        <div class="h4 font-weight-normal"> Any Query </div>
 
-        <div class="row">
-
-            <!-- username field -->
-            <div class="col-lg-4 col-md-6 col-12 py-3 form-group">
-
-                <input type="text" name="username" id="" placeholder="Your Good Name" class="form-control">
-
-            </div>
-            <!-- email field -->
-            <div class="col-lg-4 col-md-6 col-12 py-3 form-group">
-
-                <input type="email" name="email" id="" placeholder="Your Email Id" class="form-control">
-
-            </div>
-            <!-- number field -->
-            <div class="col-lg-4 col-12 py-3 form-group">
-
-                <input type="text" name="number" id="" placeholder="Number" class="form-control">
-
-            </div>
-            <!-- content field -->
-            <div class="col-12 py-3 form-group">
-
-                <textarea name="content" id="" rows="10" placeholder="Share with us" class="form-control"></textarea>
-
-            </div>
-            <!-- button -->
-            <div class="col-12 py-3">
-
-                <input type="submit" value="Send Message" name="complaint_submit" class="btn btn-block btn-dark">
-
-            </div>
-
-        </div>
-
-    </form>
-      
-    <?php
-
-        if (isset($_REQUEST['complaint_submit']))
-        {
-
-            $username = $_REQUEST['username'];
-            $email = $_REQUEST['email'];
-            $number = $_REQUEST['number'];
-            $content = $_REQUEST['content'];
-
-            
-            require('connection.php');
-            
-            /*
-                create table querytable( username varchar(30), email varchar(30), number varchar(30), content varchar(30) );
-
-                ensure before test database or querytable present
-
-                mysqli_query(); : function return response of mysqli 
-                take arguments :-
-                    1 :  connection     {x}
-                    2 :  query          {x}
-            
-            insert into querytable values("username","fake@email.com","1234567890","hello how are you");
-            
-            */
-             
-            $query = "insert into querytable values('".$username."','".$email."','".$number."','".$content."')";
-    
-            $result = mysqli_query($connection,$query);
-
-            if ($result)
-            {
-                echo "<div  class='alert alert-success'> Success fully </div>";
-            }
-        }
-
-       
-
-    ?>
-      
-      <!-- footer section -->
-
-      <div id="footer" class="py-3">
-
-        <h6> Copyright by CyberHub </h6>
+  <div class="container border  rounded shadow my-5">
+    <div class="row">
+      <div class="col-6">
+        
+        <img src="cybercrime.png" class="my-5" alt="">
 
       </div>
-    
-    </div>
-        
 
+
+      <div class="col-4">
+
+      <form action="" method="post" class="border-top my-3 ">
+
+        <div class="h3 py-3 text-white mx-5">Any Query</div>
+        <!-- username -->
+        <div class="input-box d-flex my-3">
+        <span class="icon material-symbols-outlined text-white">person</span>
+        <input type="text"  name="username"placeholder="username" class="form-control" required>
+
+        </div>
+        <!-- password  -->
+        <div class="input-box d-flex my-3">
+        <span class="icon material-symbols-outlined text-white">passkey</span>
+        <input type="text" name="email" placeholder="email" class="form-control" required>
+
+        </div>
+        <div class="input-box d-flex my-3">
+        <span class="material-symbols-outlined text-white">
+call
+</span>
+        <input type="text" name="number" placeholder="number" class="form-control" required>
+
+        </div>
+        <div class="input-box d-flex my-2 mx-4" >
+       <textarea name="query" placeholder="enter your query" cols="120" rows="7" ></textarea>
+        </div>
+        <input type="submit" value="submit" name="submit" class="btn btn-dark mx-4">
+               </form>
+
+      </div>
+
+      <div class="col"></div>
+
+    </div>
+  </div>
+      
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 

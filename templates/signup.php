@@ -1,11 +1,10 @@
 
+
 <?php
-
-
 $host = "localhost";
 $username = "root";
 $password = "";
-$database = "admin";
+$database = "user";
 
 $connection = mysqli_connect($host,$username,$password,$database);
 if ($connection)
@@ -18,14 +17,19 @@ else
 }
 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['signup'])){
     $username=$_POST['username'];
     $email=$_POST['email'];
 $number=$_POST['number'];
-    $result="insert into admin_contact values('$username','$email','$number');";
+$password=$_POST['password'];
+$confirmpassword=$_POST['confirmpassword'];
+
+    $result="insert into user_data2 values('$username','$email','$number','$password','$confirmpassword');";
 if(mysqli_query($connection,$result)){
 
- header("location:contact.php");
+        
+   
+ header("location:login.php");
 }
 else{
     echo"error in send the complaint";
@@ -33,6 +37,9 @@ else{
 }
 
 ?>
+
+
+
 
 
 
@@ -52,11 +59,11 @@ else{
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
      <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-
 <body style="background-image: linear-gradient(
   45deg,
   hsl(240deg 37% 62%) 0%,
@@ -86,26 +93,27 @@ else{
 
       <div class="col-4">
 
-      
+      <form action="" method="post" class="my-3 ">
 
-      <div class="w-100 py-3 "></div>
+        <div class="h1 py-3 mx-3 text-white">Signup Form </div>
+        
+        <div class="w-100 py-2"></div>
 
-      <form action="" method="post" class="border-top my-3 ">
-
-        <div class="h3 py-3 text-white mx-5">Contact Us</div>
-        <br>
         <!-- username -->
         <div class="input-box d-flex my-3">
         <span class="icon material-symbols-outlined text-white">person</span>
         <input type="text"  name="username"placeholder="username" class="form-control" required>
 
         </div>
-        <!-- password  -->
+        <!-- email  -->
         <div class="input-box d-flex my-3">
-        <span class="icon material-symbols-outlined text-white">passkey</span>
+        <span class="material-symbols-outlined text-white">
+mail
+</span>
         <input type="text" name="email" placeholder="email" class="form-control" required>
 
         </div>
+        <!-- number -->
         <div class="input-box d-flex my-3">
         <span class="material-symbols-outlined text-white">
 call
@@ -113,8 +121,31 @@ call
         <input type="text" name="number" placeholder="number" class="form-control" required>
 
         </div>
-        <input type="submit" value="submit" name="submit" class="btn btn-dark mx-4">
-               </form>
+
+        <!-- password -->
+        <div class="input-box d-flex my-3 text-white">
+        <span class="icon material-symbols-outlined">passkey</span>
+        <input type="password" name="password" placeholder="password" class="form-control" required>
+
+        </div>
+
+
+        <!-- confirmpassowrd -->
+        <div class="input-box d-flex my-3">
+        <span class="icon material-symbols-outlined text-white">passkey</span>
+        <input type="password" name="confirmpassword" placeholder="confirmpassword" class="form-control" required>
+
+        </div>
+
+        <div class="w-100 py-2"></div>
+
+
+        <input type="submit" value="signup" name="signup" class="btn btn-dark mx-3">
+     
+
+          </div>
+        </form>
+
 
       </div>
 
@@ -123,18 +154,6 @@ call
     </div>
   </div>
       
-    
-      <!-- footer section -->
-
-      <div id="footer" class="py-3">
-
-        <h6 style="color: rgba(0,0,0,0.5); font-size: small !important;"> Copyright by CyberHub </h6>
-
-      </div>
-    
-    </div>
-        
-
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 

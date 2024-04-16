@@ -19,7 +19,7 @@
 <body>
 <?php
 
-echo("<div class='navbar navbar-expand-md bg-body-tertiary border' style='background: white'>
+echo("<div class='navbar navbar-expand-md bg-body-tertiary border' style='background:black;'>
       <div class='container'>
         <!-- ( brandname ) -->
         <a class='navbar-brand' href='#'>CyberHub</a>
@@ -31,7 +31,7 @@ echo("<div class='navbar navbar-expand-md bg-body-tertiary border' style='backgr
         <div class='collapse navbar-collapse' style='justify-content: flex-end;' id='navbarNavAltMarkup'>
           <div class='navbar-nav' style='gap: 0.5rem'>
           
-            <a class='nav-link active' style='font-size: small !important;' aria-current='page' href='index.php'>Home</a>
+            <a class='nav-link active' style='font-size: small !important;' aria-current='page' href='home.php'>Home</a>
           
             <a class='nav-link' style='font-size: small !important;' href='complaine.php'>Complaint</a>
           
