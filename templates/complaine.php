@@ -37,19 +37,7 @@ else{
 
 </head>
 
-<body style="background-image: linear-gradient(
-  45deg,
-  hsl(240deg 37% 62%) 0%,
-  hsl(274deg 42% 63%) 11%,
-  hsl(308deg 49% 64%) 22%,
-  hsl(330deg 90% 72%) 33%,
-  hsl(341deg 100% 73%) 44%,
-  hsl(358deg 100% 75%) 56%,
-  hsl(18deg 100% 70%) 67%,
-  hsl(34deg 100% 64%) 78%,
-  hsl(46deg 100% 57%) 89%,
-  hsl(55deg 100% 50%) 100%
-);">
+<body style="background:black;">
 
   <?php include('navbar.php') ?>
 

@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYBER-HUB</title>
     <link rel="shortcut icon" href="https://assets-global.website-files.com/64a2ab71942e1d57feb6fe39/6528221f95333ff155d01ad2_fav.gif" type="image/x-icon">
-   
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-   
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -68,7 +67,7 @@
 </style>
 </head>
 
-<body style="background-image:url('cybercrime.png'); background-repeat:no-repeat; ">
+<body>
     <nav>
         <h1 style="color:white;">CYBER-HUB.</h1>
         <div class="nav-part2">
@@ -85,7 +84,7 @@
                     
                       <a class='nav-link active' style: aria-current='page' href='index.php' style="color:white;">Home</a>
                     
-                      <a class='nav-link'  href='login.php' style="color:white;">login</a>
+                      <a class='nav-link'  href='login.php' style="color:white">login</a>
                     </div>
                   </div>
                 
@@ -97,15 +96,15 @@
         </div>
     </nav>
     <div id="main">
-        <div id="page1" style="background: linear-gradient(#e66465, #9198e5);">
-            <h1>Cyber security</h1>
-            <h1>CYBER WORLD INFO.</h1>
-            <p style="font-size:25px;">We Care for you </p>
+        <div id="page1" style="background:black;">
+            <h1 style="color:white;">Cyber security</h1>
+            <h1 style="color:white;">CYBER WORLD INFO.</h1>
+            <p style="font-size:25px;color:white;">We Care for you </p>
         </div>
         
                  <div id="page7">
             <div class="footer">
-                <p>&copy; 2024 Cybersecurity Hub. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p style="color:white;">&copy; 2024 Cybersecurity Hub. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
               </div>
         </div>
     </div>

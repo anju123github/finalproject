@@ -109,10 +109,10 @@
         </div>
     </nav>
     <div id="main">
-        <div id="page1">
-            <h1>Cyber security</h1>
+        <div id="page1" style="background:black;">
+            <h1 style="color:white;">Cyber security</h1>
             <h1>CYBER WORLD INFO.</h1>
-            <p>We Care for you </p>
+            <p style="color:white;">We Care for you </p>
         </div>
         <!-- new page starts here -->
         <div class="search-container">
